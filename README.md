@@ -7,7 +7,7 @@ credenciales:
 * User Name: sa
 * Password: password
 
-# Comandos para ejecutar la backend
+# Comandos para ver la lista desde del backend
 lista de estudiantes:
 * curl http://localhost:8080/api/students
 
