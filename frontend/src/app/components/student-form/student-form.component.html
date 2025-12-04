@@ -1,0 +1,34 @@
+<div class="form-container">
+    <h2>{{ isEditMode ? 'Editar Estudiante' : 'Agregar Estudiante' }}</h2>
+
+    <form (ngSubmit)="onSubmit()" #studentForm="ngForm">
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" [(ngModel)]="formData.name" required
+                placeholder="Ingresa el nombre" />
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" [(ngModel)]="formData.email" required
+                placeholder="ejemplo@correo.com" />
+        </div>
+
+        <div class="form-group">
+            <label for="age">Edad:</label>
+            <input type="number" id="age" name="age" [(ngModel)]="formData.age" required min="1" max="120"
+                placeholder="Ingresa la edad" />
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                {{ isEditMode ? 'Actualizar' : 'Guardar' }}
+            </button>
+            @if (isEditMode) {
+            <button type="button" (click)="onCancel()" class="btn btn-secondary">
+                Cancelar
+            </button>
+            }
+        </div>
+    </form>
+</div>
